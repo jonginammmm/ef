@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#08060b">
+<title>Faqat sen uchun ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+html,body{
+    width:100%;
+    min-height:100%;
+    overflow:hidden;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    background:#070509;
+    color:white;
+}
+
+body{
+    position:relative;
+}
+
+/* BACKGROUND */
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-10;
+    background:
+        radial-gradient(circle at 20% 20%,rgba(255,70,130,.18),transparent 35%),
+        radial-gradient(circle at 80% 70%,rgba(130,60,255,.16),transparent 35%),
+        linear-gradient(145deg,#08060c,#170913,#08060d);
+}
+
+.background::before,
+.background::after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    filter:blur(70px);
+    animation:floatGlow 8s ease-in-out infinite alternate;
+}
+
+.background::before{
+    width:280px;
+    height:280px;
+    background:rgba(255,30,110,.13);
+    top:-80px;
+    left:-80px;
+}
+
+.background::after{
+    width:300px;
+    height:300px;
+    background:rgba(130,70,255,.12);
+    right:-100px;
+    bottom:-100px;
+    animation-delay:2s;
+}
+
+@keyframes floatGlow{
+    from{transform:translate(0,0) scale(1)}
+    to{transform:translate(35px,25px) scale(1.15)}
+}
+
+/* PARTICLES */
+#particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:1;
+}
+
+.particle{
+    position:absolute;
+    width:3px;
+    height:3px;
+    border-radius:50%;
+    background:rgba(255,255,255,.7);
+    box-shadow:0 0 10px rgba(255,170,210,.8);
+    animation:particleMove linear infinite;
+}
+
+@keyframes particleMove{
+    from{
+        transform:translateY(110vh) scale(.5);
+        opacity:0;
+    }
+    15%{opacity:1}
+    85%{opacity:.8}
+    to{
+        transform:translateY(-10vh) scale(1);
+        opacity:0;
+    }
+}
+
+/* MAIN */
+.app{
+    width:100%;
+    height:100vh;
+    height:100dvh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:18px;
+    position:relative;
+    z-index:2;
+}
+
+.screen{
+    width:min(440px,100%);
+    max-height:94vh;
+    max-height:94dvh;
+    overflow-y:auto;
+    scrollbar-width:none;
+    display:none;
+    animation:screenIn .7s cubic-bezier(.2,.8,.2,1);
+}
+
+.screen::-webkit-scrollbar{
+    display:none;
+}
+
+.screen.active{
+    display:block;
+}
+
+@keyframes screenIn{
+    from{
+        opacity:0;
+        transform:translateY(25px) scale(.96);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+/* GLASS CARD */
+.card{
+    position:relative;
+    padding:30px 22px;
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:32px;
+    background:rgba(255,255,255,.075);
+    backdrop-filter:blur(25px) saturate(140%);
+    -webkit-backdrop-filter:blur(25px) saturate(140%);
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.45),
+        inset 0 1px 0 rgba(255,255,255,.12);
+}
+
+.top-heart{
+    width:76px;
+    height:76px;
+    margin:0 auto 18px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    background:rgba(255,70,130,.10);
+    border:1px solid rgba(255,120,170,.2);
+    box-shadow:0 0 35px rgba(255,40,110,.18);
+    font-size:37px;
+    animation:heartBeat 1.6s infinite;
+}
+
+@keyframes heartBeat{
+    0%,100%{transform:scale(1)}
+    14%{transform:scale(1.12)}
+    28%{transform:scale(1)}
+    42%{transform:scale(1.08)}
+}
+
+h1{
+    text-align:center;
+    font-size:31px;
+    line-height:1.2;
+    margin-bottom:14px;
+    font-weight:700;
+    letter-spacing:-.7px;
+}
+
+.gradient{
+    background:linear-gradient(90deg,#fff,#ffb6d3,#fff);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.subtitle{
+    text-align:center;
+    color:rgba(255,255,255,.62);
+    font-size:14px;
+    line-height:1.7;
+    margin-bottom:25px;
+}
+
+/* TYPEWRITER */
+.typewriter{
+    min-height:170px;
+    color:rgba(255,255,255,.88);
+    font-family:"Segoe Print","Bradley Hand","Comic Sans MS",cursive;
+    font-size:16px;
+    line-height:1.85;
+    text-align:left;
+}
+
+.cursor{
+    display:inline-block;
+    width:2px;
+    height:17px;
+    background:#ff8eb7;
+    margin-left:3px;
+    vertical-align:-2px;
+    animation:blink .7s infinite;
+}
+
+@keyframes blink{
+    50%{opacity:0}
+}
+
+/* BUTTONS */
+.buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-top:24px;
+}
+
+button{
+    width:100%;
+    min-height:54px;
+    border:0;
+    border-radius:18px;
+    color:white;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.25s ease;
+    font-family:inherit;
+}
+
+button:active{
+    transform:scale(.96);
+}
+
+.primary{
+    background:linear-gradient(135deg,#ff477f,#d92968);
+    box-shadow:0 12px 35px rgba(255,45,110,.28);
+}
+
+.secondary{
+    background:rgba(255,255,255,.075);
+    border:1px solid rgba(255,255,255,.13);
+}
+
+.primary:hover{
+    box-shadow:0 15px 45px rgba(255,45,110,.4);
+}
+
+/* PROGRESS */
+.progress{
+    height:4px;
+    background:rgba(255,255,255,.1);
+    border-radius:10px;
+    margin:0 0 20px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    height:100%;
+    width:10%;
+    background:linear-gradient(90deg,#ff477f,#ff9cc1);
+    border-radius:10px;
+    transition:.4s;
+}
+
+/* QUESTION */
+.question-number{
+    color:#ff9abb;
+    font-size:13px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:10px;
+}
+
+.question{
+    font-size:22px;
+    line-height:1.4;
+    margin-bottom:20px;
+}
+
+.option{
+    display:flex;
+    align-items:center;
+    gap:13px;
+    width:100%;
+    min-height:57px;
+    padding:13px 16px;
+    margin-bottom:10px;
+    border-radius:18px;
+    background:rgba(255,255,255,.055);
+    border:1px solid rgba(255,255,255,.09);
+    color:rgba(255,255,255,.9);
+    text-align:left;
+    font-weight:500;
+}
+
+.option .circle{
+    width:22px;
+    height:22px;
+    flex:none;
+    border-radius:50%;
+    border:2px solid rgba(255,255,255,.35);
+    transition:.25s;
+}
+
+.option.selected{
+    background:rgba(255,65,125,.13);
+    border-color:rgba(255,110,155,.55);
+}
+
+.option.selected .circle{
+    border-color:#ff709e;
+    background:#ff709e;
+    box-shadow:inset 0 0 0 4px rgba(255,255,255,.8);
+}
+
+.nav{
+    display:flex;
+    gap:10px;
+    margin-top:18px;
+}
+
+.nav button{
+    flex:1;
+}
+
+/* MODAL */
+.modal{
+    position:fixed;
+    inset:0;
+    z-index:100;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    padding:22px;
+    background:rgba(0,0,0,.68);
+    backdrop-filter:blur(12px);
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    width:min(390px,100%);
+    padding:28px 22px;
+    border-radius:28px;
+    background:rgba(28,18,29,.9);
+    border:1px solid rgba(255,255,255,.14);
+    text-align:center;
+    box-shadow:0 25px 80px rgba(0,0,0,.65);
+    animation:modalIn .45s ease;
+}
+
+@keyframes modalIn{
+    from{opacity:0;transform:scale(.8)}
+    to{opacity:1;transform:scale(1)}
+}
+
+.modal-icon{
+    font-size:43px;
+    margin-bottom:13px;
+}
+
+.modal-title{
+    font-size:21px;
+    margin-bottom:9px;
+}
+
+.modal-text{
+    color:rgba(255,255,255,.65);
+    font-size:14px;
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+/* COUNTDOWN */
+.countdown{
+    font-size:54px;
+    font-weight:800;
+    color:#ff83ad;
+    margin:8px 0;
+    text-shadow:0 0 30px rgba(255,60,130,.45);
+}
+
+/* HEART SCREEN */
+.heart-screen{
+    position:fixed;
+    inset:0;
+    z-index:80;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    background:
+        radial-gradient(circle at center,rgba(95,20,55,.25),transparent 45%),
+        #050307;
+    overflow:hidden;
+}
+
+.heart-screen.show{
+    display:flex;
+    animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0}
+    to{opacity:1}
+}
+
+#heartCanvas{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+}
+
+.heart-content{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    padding:25px;
+    width:min(430px,92%);
+    pointer-events:none;
+}
+
+.heart-title{
+    font-family:"Segoe Print","Bradley Hand",cursive;
+    font-size:25px;
+    line-height:1.55;
+    text-shadow:0 0 25px rgba(255,80,140,.6);
+}
+
+.heart-small{
+    margin-top:12px;
+    font-size:13px;
+    color:rgba(255,255,255,.55);
+}
+
+/* FINAL */
+.final-message{
+    text-align:center;
+    font-family:"Segoe Print","Bradley Hand",cursive;
+    font-size:18px;
+    line-height:1.8;
+    color:rgba(255,255,255,.9);
+    margin:20px 0;
+}
+
+.signature{
+    text-align:center;
+    color:#ff9abb;
+    font-family:"Segoe Print","Bradley Hand",cursive;
+    margin-top:18px;
+    font-size:16px;
+}
+
+/* SUCCESS */
+.success-heart{
+    font-size:80px;
+    text-align:center;
+    animation:successBeat 1.2s infinite;
+    filter:drop-shadow(0 0 25px rgba(255,50,120,.7));
+}
+
+@keyframes successBeat{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.18)}
+}
+
+/* CONFETTI */
+.confetti{
+    position:fixed;
+    width:8px;
+    height:13px;
+    top:-20px;
+    z-index:200;
+    pointer-events:none;
+    animation:confettiFall linear forwards;
+}
+
+@keyframes confettiFall{
+    to{
+        transform:translate3d(var(--x),110vh,0) rotate(720deg);
+        opacity:0;
+    }
+}
+
+/* MUSIC BUTTON */
+.music{
+    position:fixed;
+    top:15px;
+    right:15px;
+    z-index:20;
+    width:43px;
+    height:43px;
+    min-height:43px;
+    border-radius:50%;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.13);
+    backdrop-filter:blur(15px);
+    font-size:18px;
+}
+
+/* TOAST */
+.toast{
+    position:fixed;
+    left:50%;
+    bottom:25px;
+    transform:translateX(-50%) translateY(100px);
+    z-index:300;
+    padding:12px 18px;
+    border-radius:15px;
+    background:rgba(30,20,30,.9);
+    border:1px solid rgba(255,255,255,.12);
+    color:white;
+    font-size:13px;
+    opacity:0;
+    transition:.4s;
+    white-space:nowrap;
+}
+
+.toast.show{
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+}
+
+/* MOBILE */
+@media(max-height:700px){
+    .card{
+        padding:23px 19px;
+    }
+
+    .top-heart{
+        width:60px;
+        height:60px;
+        font-size:29px;
+        margin-bottom:12px;
+    }
+
+    h1{
+        font-size:27px;
+    }
+
+    .typewriter{
+        min-height:145px;
+        font-size:14px;
+    }
+}
+
+@media(max-width:360px){
+    .app{
+        padding:10px;
+    }
+
+    .card{
+        padding:21px 16px;
+        border-radius:25px;
+    }
+
+    h1{
+        font-size:25px;
+    }
+
+    .typewriter{
+        font-size:14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background"></div>
+<div id="particles"></div>
+
+<button class="music" id="musicBtn" onclick="toggleMusic()">♪</button>
+
+<div class="app">
+
+    <!-- INTRO -->
+    <section class="screen active" id="introScreen">
+        <div class="card">
+
+            <div class="top-heart">❤️</div>
+
+            <h1>
+                <span class="gradient">Faqat sen uchun</span>
+            </h1>
+
+            <div class="subtitle">
+                Bu oddiy sayt emas...
+            </div>
+
+            <div class="typewriter">
+                <span id="typeText"></span><span class="cursor"></span>
+            </div>
+
+            <div class="buttons">
+                <button class="primary" onclick="startApology()">
+                    Ha, ko‘raman ❤️
+                </button>
+
+                <button class="secondary" onclick="littleSurprise()">
+                    Hozircha yo‘q 🙈
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- APOLOGY -->
+    <section class="screen" id="apologyScreen">
+        <div class="card">
+
+            <div class="top-heart">🥺</div>
+
+            <h1>
+                <span class="gradient">Men seni xafa qildim...</span>
+            </h1>
+
+            <div class="final-message">
+                Bugun qilgan ishim yoki aytgan gapim bilan
+                seni xafa qilganimni tushundim.
+                <br><br>
+
+                Balki men uchun oddiy tuyulgandir,
+                lekin sening ko‘ngling og‘rigan bo‘lsa,
+                demak bu men uchun ham oddiy narsa emas.
+                <br><br>
+
+                Men o‘zimni oqlamoqchi emasman.
+                Shunchaki chin dildan aytmoqchiman...
+                <br><br>
+
+                <b>Men sendan kechirim so‘rayman. ❤️</b>
+            </div>
+
+            <div class="buttons">
+                <button class="primary" onclick="nextApology()">
+                    Davom et ❤️
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- QUESTIONS -->
+    <section class="screen" id="questionScreen">
+        <div class="card">
+
+            <div class="progress">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+
+            <div class="question-number" id="questionNumber">
+                1 / 4
+            </div>
+
+            <div class="question" id="questionText">
+                Hali ham biroz xafamisan? 🥺
+            </div>
+
+            <div id="options"></div>
+
+            <div class="nav">
+                <button class="secondary" onclick="previousQuestion()" id="backBtn">
+                    ← Orqaga
+                </button>
+
+                <button class="primary" onclick="nextQuestion()">
+                    Davom et →
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- FINAL QUESTION -->
+    <section class="screen" id="forgiveScreen">
+        <div class="card">
+
+            <div class="top-heart">🌹</div>
+
+            <h1>
+                <span class="gradient">Eng muhim savol...</span>
+            </h1>
+
+            <div class="final-message">
+                Men xatoyimni o‘zgartira olmayman.
+                <br>
+                Lekin undan keyingi munosabatimni
+                o‘zgartira olaman.
+                <br><br>
+
+                Shuning uchun sendan faqat bitta narsani
+                so‘rayman...
+                <br><br>
+
+                <b>Meni kechira olasanmi? ❤️</b>
+            </div>
+
+            <div class="buttons">
+                <button class="primary" onclick="forgiveYes()">
+                    Ha, kechirdim ❤️
+                </button>
+
+                <button class="secondary" onclick="forgiveNo()">
+                    Hali biroz xafaman 🥺
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- SUCCESS -->
+    <section class="screen" id="successScreen">
+        <div class="card">
+
+            <div class="success-heart">❤️</div>
+
+            <h1>
+                <span class="gradient">Rahmat, jonim...</span>
+            </h1>
+
+            <div class="final-message">
+                Bilasanmi...
+                <br><br>
+
+                Men uchun sening kulishing,
+                xursand bo‘lishing va ko‘ngling tinchligi
+                juda qadrli.
+                <br><br>
+
+                Bugungi xatoyim menga bir narsani yana
+                bir bor eslatdi:
+                <br><br>
+
+                <b>
+                    seni xafa qilmaslikka ko‘proq e'tibor berishim kerak. ❤️
+                </b>
+
+                <br><br>
+
+                Agar bugun ko‘nglingni og‘ritgan bo‘lsam,
+                meni kechir.
+                Men esa buni shunchaki so‘z bilan emas,
+                harakatim bilan ko‘rsatishga harakat qilaman.
+            </div>
+
+            <div class="signature">
+                Faqat sening tabassuming uchun... ❤️
+            </div>
+
+            <div class="buttons">
+                <button class="primary" onclick="openHeart()">
+                    Oxirgi kichkina syurpriz ✨
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+    <div class="modal-box">
+
+        <div class="modal-icon">💗</div>
+
+        <div class="modal-title" id="modalTitle">
+            Ishonching komilmi?
+        </div>
+
+        <div class="modal-text" id="modalText">
+            Javobingni tanlashdan oldin bir soniya o‘ylab ko‘r...
+        </div>
+
+        <div class="countdown" id="countdown">3</div>
+
+        <button class="primary" onclick="closeModal()">
+            Mayli ❤️
+        </button>
+
+    </div>
+</div>
+
+
+<!-- HEART -->
+<div class="heart-screen" id="heartScreen">
+
+    <canvas id="heartCanvas"></canvas>
+
+    <div class="heart-content">
+
+        <div class="heart-title">
+            Sen xafa bo‘lganingda,
+            mening ham ko‘nglim joyida bo‘lmaydi... ❤️
+        </div>
+
+        <div class="heart-small">
+            Ba'zan bitta samimiy “kechir” butun bir hikoyaning
+            eng chiroyli joyiga aylanishi mumkin.
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="toast" id="toast"></div>
+
+
+<!-- AUDIO -->
+<audio id="music" loop>
+    <!-- Agar xohlasang shu yerga o'zingning MP3 faylingni qo'yishing mumkin -->
+    <source src="" type="audio/mpeg">
+</audio>
+
+
+<script>
+
+/* =========================================================
+   STATE
+========================================================= */
+
+const STORAGE_KEY = "romantic_apology_site_v1";
+
+let state = {
+    started:false,
+    question:0,
+    answers:[],
+    forgiven:false
+};
+
+try{
+    const saved = localStorage.getItem(STORAGE_KEY);
+
+    if(saved){
+        state = {...state,...JSON.parse(saved)};
+    }
+}catch(e){}
+
+function saveState(){
+    try{
+        localStorage.setItem(
+            STORAGE_KEY,
+            JSON.stringify(state)
+        );
+    }catch(e){}
+}
+
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+const particleContainer =
+    document.getElementById("particles");
+
+for(let i=0;i<45;i++){
+
+    const p=document.createElement("div");
+
+    p.className="particle";
+
+    p.style.left=Math.random()*100+"%";
+    p.style.animationDuration=(6+Math.random()*10)+"s";
+    p.style.animationDelay=(-Math.random()*15)+"s";
+    p.style.opacity=(.2+Math.random()*.7);
+
+    const size=1+Math.random()*3;
+
+    p.style.width=size+"px";
+    p.style.height=size+"px";
+
+    particleContainer.appendChild(p);
+}
+
+
+/* =========================================================
+   SCREEN CONTROL
+========================================================= */
+
+const screens = {
+    intro:document.getElementById("introScreen"),
+    apology:document.getElementById("apologyScreen"),
+    question:document.getElementById("questionScreen"),
+    forgive:document.getElementById("forgiveScreen"),
+    success:document.getElementById("successScreen")
+};
+
+function showScreen(name){
+
+    Object.values(screens).forEach(s=>{
+        s.classList.remove("active");
+    });
+
+    screens[name].classList.add("active");
+
+    window.scrollTo(0,0);
+}
+
+
+/* =========================================================
+   TYPEWRITER
+========================================================= */
+
+const introText =
+`Jonim...
+
+Bugun seni xafa qilganimni bilaman.
+
+Shuning uchun oddiygina “kechir” deb yozib qo‘yish menga yetarli tuyulmadi.
+
+Men bu kichkina saytni sen uchun tayyorladim.
+
+Har bir so‘zini yozayotganda bitta narsani o‘yladim:
+
+sening ko‘nglingni yana bir marta ko‘tarish.
+
+Chunki sening tabassuming men uchun juda qadrli.
+
+Shunchaki oxirigacha ko‘r...
+Bu safar hech qanday bahona yo‘q.
+
+Faqat samimiy gaplar bor. ❤️`;
+
+let typeIndex=0;
+
+function typeWriter(){
+
+    const target =
+        document.getElementById("typeText");
+
+    if(typeIndex < introText.length){
+
+        target.textContent += introText.charAt(typeIndex);
+
+        typeIndex++;
+
+        let speed=22;
+
+        if(introText.charAt(typeIndex)==="\n"){
+            speed=250;
+        }
+
+        setTimeout(typeWriter,speed);
+
+    }
+}
+
+typeWriter();
+
+
+/* =========================================================
+   INTRO BUTTONS
+========================================================= */
+
+function startApology(){
+
+    state.started=true;
+    saveState();
+
+    showScreen("apology");
+}
+
+function littleSurprise(){
+
+    showToast(
+        "Mayli 🙈 Lekin baribir oxirigacha ko‘rib qo‘y..."
+    );
+
+    setTimeout(()=>{
+        showScreen("apology");
+    },1200);
+}
+
+
+/* =========================================================
+   APOLOGY
+========================================================= */
+
+function nextApology(){
+
+    state.question=0;
+    saveState();
+
+    showScreen("question");
+
+    renderQuestion();
+}
+
+
+/* =========================================================
+   QUESTIONS
+========================================================= */
+
+const questions=[
+
+    {
+        q:"Hali ham biroz xafamisan? 🥺",
+        options:[
+            "Ha, biroz xafaman",
+            "Juda xafaman",
+            "Biroz-biroz 😔",
+            "Endi unchalik emas ❤️"
+        ]
+    },
+
+    {
+        q:"Mendan nimani ko‘proq kutarding?",
+        options:[
+            "Ko‘proq e'tibor",
+            "Yaxshiroq tushunishimni",
+            "Shunchaki samimiylikni",
+            "Hech narsa, faqat xafa qilmasligimni"
+        ]
+    },
+
+    {
+        q:"Agar yana imkon berilsa...",
+        options:[
+            "Xatoni takrorlamasligimni xohlardim",
+            "Seni ko‘proq tinglashimni",
+            "Ko‘proq kuldirishimni",
+            "Hammasini birga xohlayman ❤️"
+        ]
+    },
+
+    {
+        q:"Hozir qalbingdagi eng kichkina javob qaysi?",
+        options:[
+            "Mayli, yarashamiz ❤️",
+            "Hali o‘ylab turibman",
+            "Menga vaqt kerak",
+            "Balki kechirarman..."
+        ]
+    }
+
+];
+
+function renderQuestion(){
+
+    const q=questions[state.question];
+
+    document.getElementById("questionNumber")
+        .textContent=(state.question+1)+" / "+questions.length;
+
+    document.getElementById("questionText")
+        .textContent=q.q;
+
+    document.getElementById("progressBar")
+        .style.width=((state.question+1)/questions.length*100)+"%";
+
+    const options=document.getElementById("options");
+
+    options.innerHTML="";
+
+    q.options.forEach((option,index)=>{
+
+        const btn=document.createElement("button");
+
+        btn.className="option";
+
+        if(state.answers[state.question]===index){
+            btn.classList.add("selected");
+        }
+
+        btn.innerHTML=`
+            <span class="circle"></span>
+            <span>${option}</span>
+        `;
+
+        btn.onclick=()=>{
+
+            state.answers[state.question]=index;
+
+            saveState();
+
+            renderQuestion();
+        };
+
+        options.appendChild(btn);
+    });
+
+    document.getElementById("backBtn").style.visibility =
+        state.question===0 ? "hidden" : "visible";
+}
+
+function nextQuestion(){
+
+    if(state.answers[state.question]===undefined){
+
+        showToast("Avval bir javob tanla ❤️");
+
+        return;
+    }
+
+    if(state.question < questions.length-1){
+
+        state.question++;
+
+        saveState();
+
+        renderQuestion();
+
+    }else{
+
+        showScreen("forgive");
+    }
+}
+
+function previousQuestion(){
+
+    if(state.question>0){
+
+        state.question--;
+
+        saveState();
+
+        renderQuestion();
+    }
+}
+
+
+/* =========================================================
+   FORGIVENESS
+========================================================= */
+
+function forgiveYes(){
+
+    state.forgiven=true;
+
+    saveState();
+
+    showScreen("success");
+
+    createConfetti();
+
+    setTimeout(()=>{
+        createConfetti();
+    },1000);
+}
+
+function forgiveNo(){
+
+    const modal=
+        document.getElementById("modal");
+
+    document.getElementById("modalTitle")
+        .textContent="Mayli... 🥺";
+
+    document.getElementById("modalText")
+        .textContent=
+        "Seni majburlamayman. Agar hali xafa bo‘lsang, bunga haqqing bor. Faqat bilib qo‘y: men chin dildan afsusdaman.";
+
+    document.getElementById("countdown")
+        .textContent="❤️";
+
+    modal.classList.add("show");
+}
+
+function closeModal(){
+
+    document.getElementById("modal")
+        .classList.remove("show");
+}
+
+
+/* =========================================================
+   CONFETTI
+========================================================= */
+
+function createConfetti(){
+
+    const symbols=[
+        "❤️","💗","💖","💕","✨","🌸","🌹"
+    ];
+
+    for(let i=0;i<80;i++){
+
+        const c=document.createElement("div");
+
+        c.className="confetti";
+
+        c.textContent=
+            symbols[Math.floor(Math.random()*symbols.length)];
+
+        c.style.left=Math.random()*100+"vw";
+
+        c.style.setProperty(
+            "--x",
+            ((Math.random()-.5)*300)+"px"
+        );
+
+        c.style.animationDuration=
+            (2.5+Math.random()*3)+"s";
+
+        c.style.animationDelay=
+            Math.random()*1.5+"s";
+
+        c.style.fontSize=
+            (10+Math.random()*16)+"px";
+
+        document.body.appendChild(c);
+
+        setTimeout(()=>{
+            c.remove();
+        },6000);
+    }
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+let toastTimer;
+
+function showToast(text){
+
+    const toast=
+        document.getElementById("toast");
+
+    toast.textContent=text;
+
+    toast.classList.add("show");
+
+    clearTimeout(toastTimer);
+
+    toastTimer=setTimeout(()=>{
+        toast.classList.remove("show");
+    },2300);
+}
+
+
+/* =========================================================
+   MUSIC
+========================================================= */
+
+const music=
+    document.getElementById("music");
+
+const musicBtn=
+    document.getElementById("musicBtn");
+
+let musicPlaying=false;
+
+function toggleMusic(){
+
+    if(!music.src || music.src.endsWith("#")){
+
+        showToast(
+            "Musiqa uchun HTML ichidagi MP3 manzilini qo‘shing 🎵"
+        );
+
+        return;
+    }
+
+    if(musicPlaying){
+
+        music.pause();
+
+        musicPlaying=false;
+
+        musicBtn.textContent="♪";
+
+    }else{
+
+        music.play()
+            .then(()=>{
+
+                musicPlaying=true;
+                musicBtn.textContent="♫";
+
+            })
+            .catch(()=>{
+                showToast("Musiqani ishga tushirib bo‘lmadi.");
+            });
+    }
+}
+
+
+/* =========================================================
+   HEART CANVAS
+========================================================= */
+
+const canvas=
+    document.getElementById("heartCanvas");
+
+const ctx=
+    canvas.getContext("2d");
+
+let heartParticles=[];
+
+function resizeCanvas(){
+
+    canvas.width=window.innerWidth *
+        devicePixelRatio;
+
+    canvas.height=window.innerHeight *
+        devicePixelRatio;
+
+    canvas.style.width=
+        window.innerWidth+"px";
+
+    canvas.style.height=
+        window.innerHeight+"px";
+
+    ctx.setTransform(
+        devicePixelRatio,
+        0,
+        0,
+        devicePixelRatio,
+        0,
+        0
+    );
+}
+
+resizeCanvas();
+
+window.addEventListener(
+    "resize",
+    resizeCanvas
+);
+
+function heartPoint(t){
+
+    /*
+       Classic parametric heart.
+    */
+
+    const x =
+        16*Math.pow(Math.sin(t),3);
+
+    const y =
+        13*Math.cos(t)
+        -5*Math.cos(2*t)
+        -2*Math.cos(3*t)
+        -Math.cos(4*t);
+
+    return {x,y};
+}
+
+function createHeartParticles(){
+
+    heartParticles=[];
+
+    const scale =
+        Math.min(window.innerWidth,window.innerHeight)
+        *0.018;
+
+    for(let i=0;i<850;i++){
+
+        const t=Math.random()*Math.PI*2;
+
+        const point=heartPoint(t);
+
+        /*
+           Ichki zichlikni oshirish.
+        */
+
+        const fill=Math.sqrt(Math.random());
+
+        heartParticles.push({
+
+            x:point.x*scale*fill,
+            y:point.y*scale*fill,
+
+            size:
+                .6+Math.random()*1.8,
+
+            alpha:
+                .25+Math.random()*.75,
+
+            phase:
+                Math.random()*Math.PI*2,
+
+            speed:
+                .01+Math.random()*.025
+        });
+    }
+}
+
+function animateHeart(){
+
+    if(!document
+        .getElementById("heartScreen")
+        .classList.contains("show")){
+
+        return;
+    }
+
+    const w=window.innerWidth;
+    const h=window.innerHeight;
+
+    ctx.clearRect(0,0,w,h);
+
+    const scale =
+        Math.min(w,h)*0.018;
+
+    const centerX=w/2;
+    const centerY=h/2-10;
+
+    heartParticles.forEach(p=>{
+
+        p.phase += p.speed;
+
+        const twinkle=
+            .55+
+            Math.sin(p.phase)*.35;
+
+        ctx.beginPath();
+
+        ctx.arc(
+            centerX+p.x,
+            centerY+p.y,
+            p.size,
+            0,
+            Math.PI*2
+        );
+
+        ctx.fillStyle=
+            `rgba(255,105,155,${p.alpha*twinkle})`;
+
+        ctx.shadowBlur=7;
+
+        ctx.shadowColor=
+            "rgba(255,60,130,.7)";
+
+        ctx.fill();
+    });
+
+    ctx.shadowBlur=0;
+
+    requestAnimationFrame(animateHeart);
+}
+
+function openHeart(){
+
+    document
+        .getElementById("heartScreen")
+        .classList.add("show");
+
+    createHeartParticles();
+
+    animateHeart();
+
+    createConfetti();
+}
+
+
+/* =========================================================
+   RESTORE
+========================================================= */
+
+window.addEventListener("load",()=>{
+
+    /*
+       Agar foydalanuvchi saytga qayta kirsa,
+       introdan majburan boshlatmaymiz.
+    */
+
+    if(state.forgiven){
+
+        showScreen("success");
+
+    }else if(state.started && state.question>0){
+
+        showScreen("question");
+
+        renderQuestion();
+
+    }
+});
+
+
+/* =========================================================
+   KEYBOARD / ESC
+========================================================= */
+
+document.addEventListener("keydown",e=>{
+
+    if(e.key==="Escape"){
+
+        closeModal();
+    }
+});
+
+</script>
+
+</body>
+</html>
